@@ -7,7 +7,7 @@
   <title>ATSCheck – ATS Resume Score & Job Match</title>
   
   <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%233b82f6%22 stroke-width=%2210%22 fill=%22none%22/><path d=%22M30 50 l15 15 l25-30%22 stroke=%22%233b82f6%22 stroke-width=%2210%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%237c2d9b%22 stroke-width=%2210%22 fill=%22none%22/><path d=%22M30 50 l15 15 l25-30%22 stroke=%22%237c2d9b%22 stroke-width=%2210%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,20 +22,24 @@
   <style>
     /* CSS CSS Reset & Variables */
     :root {
-      --bg-color: #0b0f19;
-      --card-bg: rgba(15, 23, 42, 0.65);
-      --card-bg-tint: rgba(59, 130, 246, 0.08);
-      --card-border: rgba(59, 130, 246, 0.15);
-      --card-border-active: rgba(59, 130, 246, 0.4);
-      --accent-emerald: #3b82f6; /* Slate Blue Theme Primary (Royal Blue) */
-      --accent-emerald-glow: rgba(59, 130, 246, 0.4);
-      --accent-yellow: #a855f7; /* Slate Blue Theme Secondary (Indigo/Purple) */
-      --alert-red: #ef4444;
-      --alert-red-glow: rgba(239, 68, 68, 0.2);
-      --text-white: #ffffff;
-      --text-muted: #94a3b8;
-      --text-light: #f1f5f9;
-      --footer-bg: #0f172a;
+      --bg-color: #f8f5ff; /* Light Lavender Background */
+      --bg-gradient: linear-gradient(135deg, #f8f5ff 0%, #fdf2ff 100%);
+      --card-bg: #ffffff; /* Clean white card */
+      --card-bg-tint: rgba(196, 181, 253, 0.25); /* Soft violet tint */
+      --card-border: #c4b5fd; /* Soft purple border */
+      --card-border-active: #a855f7; /* Active vibrant purple border */
+      --accent-emerald: #7c2d9b; /* Vibrant Purple (Primary) */
+      --accent-emerald-glow: rgba(124, 45, 155, 0.2);
+      --accent-yellow: #f97373; /* Coral/Rose Red (Secondary) */
+      --alert-red: #e11d48; /* Crimson Red (Alert/Critical) */
+      --alert-red-glow: rgba(225, 29, 72, 0.15);
+      --text-white: #111827; /* Near-black body text */
+      --text-muted: #6b7280; /* Soft gray secondary text */
+      --text-light: #374151; /* Dark gray details */
+      --footer-bg: #fdf2ff; /* Slightly different lavender for footer */
+      
+      /* Primary Brand Gradient */
+      --brand-gradient: linear-gradient(135deg, #4c1d95 0%, #7c2d9b 50%, #e11d48 100%);
     }
 
     * {
@@ -50,7 +54,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-color);
+      background: var(--bg-gradient);
       color: var(--text-white);
       line-height: 1.6;
       overflow-x: hidden;
@@ -69,7 +73,7 @@
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #2563eb;
+      background: #4c1d95;
     }
 
     /* Layout & Structure */
@@ -81,12 +85,12 @@
 
     /* Header */
     header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid var(--card-border);
       padding: 16px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 25, 35, 0.85);
+      background: rgba(248, 245, 255, 0.95);
       backdrop-filter: blur(8px);
     }
 
@@ -150,10 +154,11 @@
         top: 60px;
         left: 0;
         width: 100%;
-        background: var(--bg-color);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: #ffffff;
+        border-bottom: 1px solid var(--card-border);
         padding: 20px;
         gap: 16px;
+        box-shadow: 0 4px 20px rgba(124, 45, 155, 0.1);
       }
       .nav-links.active {
         display: flex;
@@ -173,7 +178,7 @@
       font-size: 2.8rem;
       line-height: 1.2;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 40%, #3b82f6 100%);
+      background: var(--brand-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -205,7 +210,7 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--card-border);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      box-shadow: 0 8px 32px 0 rgba(196, 181, 253, 0.15);
       border-radius: 16px;
       padding: 28px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -227,7 +232,7 @@
 
     .glass-card:focus-within {
       border-color: var(--card-border-active);
-      box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(124, 45, 155, 0.08);
     }
 
     .card-title {
@@ -265,8 +270,8 @@
     textarea {
       width: 100%;
       min-height: 240px;
-      background: rgba(10, 18, 30, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff;
+      border: 1px solid var(--card-border);
       border-radius: 8px;
       padding: 16px;
       color: var(--text-white);
@@ -279,16 +284,17 @@
     textarea:focus {
       outline: none;
       border-color: var(--accent-emerald);
-      background: rgba(10, 18, 30, 0.9);
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(124, 45, 155, 0.15);
     }
 
     /* File Dropzone */
     .dropzone {
-      border: 2px dashed rgba(16, 185, 129, 0.3);
+      border: 2px dashed var(--card-border);
       border-radius: 12px;
       padding: 30px 20px;
       text-align: center;
-      background: rgba(16, 185, 129, 0.02);
+      background: rgba(196, 181, 253, 0.05);
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
@@ -300,8 +306,8 @@
 
     .dropzone:hover, .dropzone.dragover {
       border-color: var(--accent-emerald);
-      background: rgba(16, 185, 129, 0.06);
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+      background: rgba(124, 45, 155, 0.05);
+      box-shadow: 0 0 15px rgba(124, 45, 155, 0.15);
     }
 
     .dropzone svg {
@@ -335,10 +341,10 @@
 
     .preview-box {
       margin-top: 16px;
-      background: rgba(0, 0, 0, 0.2);
+      background: #fdf2ff;
       border-radius: 8px;
       padding: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
       display: none;
     }
 
@@ -366,8 +372,8 @@
     }
 
     .btn-primary {
-      background: var(--accent-emerald);
-      color: #0c151d;
+      background: var(--brand-gradient);
+      color: #ffffff;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1.15rem;
@@ -376,7 +382,7 @@
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 0 25px var(--accent-emerald-glow);
+      box-shadow: 0 4px 20px rgba(124, 45, 155, 0.3);
       display: inline-flex;
       align-items: center;
       gap: 12px;
@@ -384,7 +390,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 35px rgba(16, 185, 129, 0.75);
+      box-shadow: 0 8px 30px rgba(124, 45, 155, 0.5);
     }
 
     .btn-primary:active {
@@ -402,9 +408,9 @@
     .spinner {
       width: 22px;
       height: 22px;
-      border: 3px solid rgba(12, 21, 29, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.2);
       border-radius: 50%;
-      border-top-color: #0c151d;
+      border-top-color: #ffffff;
       animation: spin 0.8s linear infinite;
       display: none;
     }
@@ -479,7 +485,7 @@
 
     .score-ring-bg {
       fill: none;
-      stroke: rgba(255, 255, 255, 0.05);
+      stroke: rgba(196, 181, 253, 0.25);
       stroke-width: 10;
     }
 
@@ -590,15 +596,15 @@
     }
 
     .chip-found {
-      background: rgba(16, 185, 129, 0.1);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      background: rgba(124, 45, 155, 0.1);
+      color: #7c2d9b;
+      border: 1px solid rgba(124, 45, 155, 0.25);
     }
 
     .chip-missing {
-      background: rgba(239, 68, 68, 0.1);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.25);
+      background: rgba(225, 29, 72, 0.1);
+      color: #e11d48;
+      border: 1px solid rgba(225, 29, 72, 0.25);
     }
 
     /* Highlighted Resume View */
@@ -671,10 +677,10 @@
     }
 
     .resume-text-view {
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
       border-radius: 8px;
       padding: 20px;
-      background: rgba(10, 18, 30, 0.5);
+      background: rgba(248, 245, 255, 0.35);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       color: var(--text-light);
@@ -685,11 +691,11 @@
     }
 
     .highlight-matched {
-      background: rgba(16, 185, 129, 0.25);
-      color: #34d399;
+      background: rgba(124, 45, 155, 0.15);
+      color: #7c2d9b;
       padding: 1px 4px;
       border-radius: 4px;
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      border: 1px solid rgba(124, 45, 155, 0.3);
       font-weight: 500;
     }
 
@@ -763,7 +769,7 @@
       border-left: 4px solid var(--accent-emerald);
     }
     .rec-emerald .rec-item-icon {
-      background: rgba(16, 185, 129, 0.2);
+      background: rgba(124, 45, 155, 0.2);
       color: var(--accent-emerald);
     }
 
@@ -776,8 +782,8 @@
     }
 
     .rewrite-card {
-      background: rgba(10, 18, 30, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(196, 181, 253, 0.05);
+      border: 1px solid var(--card-border);
       border-radius: 10px;
       padding: 16px;
     }
@@ -852,7 +858,7 @@
     .history-card:hover {
       border-color: var(--accent-emerald);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.08);
+      box-shadow: 0 4px 15px rgba(124, 45, 155, 0.15);
     }
 
     .history-meta {
@@ -907,7 +913,7 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(16, 185, 129, 0.1);
+      background: rgba(124, 45, 155, 0.05);
       border-color: var(--accent-emerald);
       color: var(--accent-emerald);
     }
@@ -952,7 +958,7 @@
       padding: 0 20px 20px;
       color: var(--text-light);
       font-size: 0.9rem;
-      border-top: 1px solid rgba(16, 185, 129, 0.05);
+      border-top: 1px solid rgba(196, 181, 253, 0.15);
       padding-top: 16px;
     }
 
@@ -969,7 +975,7 @@
     }
 
     .tip-num {
-      background: rgba(16, 185, 129, 0.1);
+      background: rgba(124, 45, 155, 0.1);
       color: var(--accent-emerald);
       width: 24px;
       height: 24px;
@@ -1042,8 +1048,15 @@
     <div class="container nav-container">
       <a href="#" class="logo" id="logoLink">
         <svg viewBox="0 0 100 100" width="30" height="30">
-          <circle cx="50" cy="50" r="40" stroke="#3b82f6" stroke-width="10" fill="none"/>
-          <path d="M30 50 l15 15 l25-30" stroke="#3b82f6" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4c1d95" />
+              <stop offset="50%" stop-color="#7c2d9b" />
+              <stop offset="100%" stop-color="#e11d48" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="40" stroke="url(#logoGrad)" stroke-width="10" fill="none"/>
+          <path d="M30 50 l15 15 l25-30" stroke="url(#logoGrad)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span><span class="logo-bold">ATS</span><span class="logo-accent">Check</span></span>
       </a>
@@ -2479,10 +2492,10 @@
           plugins: {
             legend: { display: false },
             tooltip: {
-              backgroundColor: '#111d2b',
-              titleColor: '#fff',
-              bodyColor: '#e5e7eb',
-              borderColor: '#3b82f6',
+              backgroundColor: '#ffffff',
+              titleColor: '#111827',
+              bodyColor: '#374151',
+              borderColor: '#7c2d9b',
               borderWidth: 1,
               callbacks: {
                 label: (ctx) => `Alignment: ${ctx.parsed.x}%`
@@ -2493,12 +2506,12 @@
             x: {
               min: 0,
               max: 100,
-              grid: { color: 'rgba(255, 255, 255, 0.05)' },
-              ticks: { color: '#9ca3af', font: { family: 'Inter' } }
+              grid: { color: 'rgba(0, 0, 0, 0.05)' },
+              ticks: { color: '#6b7280', font: { family: 'Inter' } }
             },
             y: {
               grid: { display: false },
-              ticks: { color: '#f3f4f6', font: { family: 'Inter', weight: '500' } }
+              ticks: { color: '#374151', font: { family: 'Inter', weight: '500' } }
             }
           }
         }
