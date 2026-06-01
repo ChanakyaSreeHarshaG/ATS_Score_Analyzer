@@ -7,7 +7,7 @@
   <title>ATSCheck – ATS Resume Score & Job Match</title>
   
   <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%2310b981%22 stroke-width=%2210%22 fill=%22none%22/><path d=%22M30 50 l15 15 l25-30%22 stroke=%22%2310b981%22 stroke-width=%2210%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%233b82f6%22 stroke-width=%2210%22 fill=%22none%22/><path d=%22M30 50 l15 15 l25-30%22 stroke=%22%233b82f6%22 stroke-width=%2210%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,20 +22,20 @@
   <style>
     /* CSS CSS Reset & Variables */
     :root {
-      --bg-color: #0f1923;
-      --card-bg: rgba(20, 32, 48, 0.65);
-      --card-bg-tint: rgba(16, 185, 129, 0.08);
-      --card-border: rgba(16, 185, 129, 0.15);
-      --card-border-active: rgba(16, 185, 129, 0.4);
-      --accent-emerald: #10b981;
-      --accent-emerald-glow: rgba(16, 185, 129, 0.4);
-      --accent-yellow: #fbbf24;
+      --bg-color: #0b0f19;
+      --card-bg: rgba(15, 23, 42, 0.65);
+      --card-bg-tint: rgba(59, 130, 246, 0.08);
+      --card-border: rgba(59, 130, 246, 0.15);
+      --card-border-active: rgba(59, 130, 246, 0.4);
+      --accent-emerald: #3b82f6; /* Slate Blue Theme Primary (Royal Blue) */
+      --accent-emerald-glow: rgba(59, 130, 246, 0.4);
+      --accent-yellow: #a855f7; /* Slate Blue Theme Secondary (Indigo/Purple) */
       --alert-red: #ef4444;
       --alert-red-glow: rgba(239, 68, 68, 0.2);
       --text-white: #ffffff;
-      --text-muted: #9ca3af;
-      --text-light: #e5e7eb;
-      --footer-bg: #111d2b;
+      --text-muted: #94a3b8;
+      --text-light: #f1f5f9;
+      --footer-bg: #0f172a;
     }
 
     * {
@@ -69,7 +69,7 @@
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #059669;
+      background: #2563eb;
     }
 
     /* Layout & Structure */
@@ -173,7 +173,7 @@
       font-size: 2.8rem;
       line-height: 1.2;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 40%, #10b981 100%);
+      background: linear-gradient(135deg, #ffffff 40%, #3b82f6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -1042,8 +1042,8 @@
     <div class="container nav-container">
       <a href="#" class="logo" id="logoLink">
         <svg viewBox="0 0 100 100" width="30" height="30">
-          <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="10" fill="none"/>
-          <path d="M30 50 l15 15 l25-30" stroke="#10b981" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="50" r="40" stroke="#3b82f6" stroke-width="10" fill="none"/>
+          <path d="M30 50 l15 15 l25-30" stroke="#3b82f6" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span><span class="logo-bold">ATS</span><span class="logo-accent">Check</span></span>
       </a>
@@ -1326,7 +1326,7 @@
               <!-- Important -->
               <div class="rec-group" id="recGroupImportant">
                 <div class="rec-group-title" style="color: var(--accent-yellow);">
-                  <span class="rec-item-icon" style="background: rgba(251,191,36,0.2); color: var(--accent-yellow); width: 20px; height: 20px;">🟡</span>
+                  <span class="rec-item-icon" style="background: rgba(168,85,247,0.2); color: var(--accent-yellow); width: 20px; height: 20px;">🟡</span>
                   Important (Should Fix)
                 </div>
                 <div id="recListImportant">
@@ -1337,7 +1337,7 @@
               <!-- Good to Have -->
               <div class="rec-group" id="recGroupGood">
                 <div class="rec-group-title" style="color: var(--accent-emerald);">
-                  <span class="rec-item-icon" style="background: rgba(16,185,129,0.2); color: var(--accent-emerald); width: 20px; height: 20px;">🟢</span>
+                  <span class="rec-item-icon" style="background: rgba(59,130,246,0.2); color: var(--accent-emerald); width: 20px; height: 20px;">🟢</span>
                   Good to Have
                 </div>
                 <div id="recListGood">
@@ -2456,8 +2456,8 @@
       ];
       
       const colors = dataPoints.map(val => {
-        if (val >= 70) return '#10b981'; // emerald
-        if (val >= 40) return '#fbbf24'; // amber
+        if (val >= 70) return '#3b82f6'; // blue
+        if (val >= 40) return '#a855f7'; // purple
         return '#ef4444'; // red
       });
       
@@ -2482,7 +2482,7 @@
               backgroundColor: '#111d2b',
               titleColor: '#fff',
               bodyColor: '#e5e7eb',
-              borderColor: '#10b981',
+              borderColor: '#3b82f6',
               borderWidth: 1,
               callbacks: {
                 label: (ctx) => `Alignment: ${ctx.parsed.x}%`
@@ -2649,7 +2649,7 @@
   <title>ATSCheck Report</title>
   <style>
     body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    h1 { color: #0f1923; border-bottom: 2px solid #10b981; padding-bottom: 8px; font-size: 24px; }
+    h1 { color: #0b0f19; border-bottom: 2px solid #3b82f6; padding-bottom: 8px; font-size: 24px; }
     h2 { font-size: 18px; color: #111; margin-top: 30px; }
     .score-badge { display: inline-block; padding: 8px 16px; border-radius: 4px; font-weight: bold; margin-right: 12px; }
     .score-ats { background: #e0f2fe; color: #0369a1; }
@@ -2662,8 +2662,8 @@
     .chip-missing { background: #fee2e2; color: #991b1b; }
     .rec-item { padding: 10px; margin-bottom: 8px; border-radius: 4px; border-left: 4px solid; }
     .rec-red { border-color: #ef4444; background: #fef2f2; color: #991b1b; }
-    .rec-amber { border-color: #fbbf24; background: #fffbeb; color: #92400e; }
-    .rec-emerald { border-color: #10b981; background: #f0fdf4; color: #166534; }
+    .rec-amber { border-color: #a855f7; background: #faf5ff; color: #6b21a8; }
+    .rec-emerald { border-color: #3b82f6; background: #eff6ff; color: #1e40af; }
   </style>
 </head>
 <body>
